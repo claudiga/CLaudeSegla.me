@@ -145,4 +145,4 @@ img.onload = function () {
 
 
 
-img.src = "caty1.jpeg";
+img.src = "images/caty1.jpeg";
