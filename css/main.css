@@ -85,7 +85,7 @@ section{
         text-align: left;
     
     }
-    handle{
+    .handle{
         
         display: block;
     }
