@@ -12,7 +12,7 @@ bart.height = 300;
 bart.width = 300;
 
 
-
+var currpage = 0;
 
 outputIm = new Image();
 outputIm.src = 'graphics/bartsml.jpg';
@@ -38,7 +38,7 @@ memtreectx.drawImage(treePic,0,0)
 
 
 
-mtrx = {"tpl":-1,"tpm":-1, "tpr":-1,"mdl":-1,"mdm":8,"mdr":-1,"btl":-1,"btm":-1,btr:-1}
+mtrx = {"tpl":0,"tpm":1, "tpr":0,"mdl":1,"mdm":0,"mdr":-1,"btl":0,"btm":-1,btr:0}
 
   $( "#output2" ).dialog(); 
 
@@ -102,10 +102,11 @@ var tutorial = function(para,x,y,index){
     
     //draw rgb for part 1
     
+    
     textarea = document.getElementById('textarea');
     tree = document.getElementById('defaultCanvas0')
     treeCtx = tree.getContext('2d');
-   
+  // treeCtx.drawImage(treePic,0,0)
     treeCtx.save();
      treeCtx.beginPath()
     treeCtx.scale(1.5,1.5);
@@ -291,7 +292,7 @@ treeCtx.restore()
         topLeftG = chData[width+9]
         topLeftB = chData[width+10]
         
-        treeCtx.fillStyle = '#EF4A9c';
+        treeCtx.fillStyle = '#231410';
        
         treeCtx.fillText(topLeftR + '*' + mtrx.tpl,32,305);
         treeCtx.fillText(topLeftG + '*' +mtrx.tpl,365,219);
@@ -631,7 +632,7 @@ position: { my: "left top", at: "left bottom", of: canvas }
      
   
 if( document.getElementById('nextBT').innerHTML == 'restart'){
-    window.alert('Click on kernel to deselect and select again')
+   document.getElementById('nextBT').innerHTML = 'resset'
     
 }
 
@@ -639,12 +640,6 @@ if( document.getElementById('nextBT').innerHTML == 'restart'){
 }
 
 
-
-
-   $( "#nextBT" ).click(function() {
-     window.alert(55)
-    
-});
 window.onload = function(){
 document.getElementById('Coutput').getContext('2d').drawImage(memc,0,0);
 }
@@ -702,13 +697,16 @@ if(clicked == false){
         
 
         var index = 0;
-            
+            var c = document.getElementById('defaultCanvas0')
+        ct = c.getContext('2d')
         
            $( "#prevBT" ).click( function( event ) {
          
-              index+=1;
+              index-=1;
             
-               tutorial(paragraphs,posx,posy,index);
+              if(index == -1){
+                  window.location.href = "page2.html"; 
+              } tutorial(paragraphs,posx,posy,index);
                
             // window.alert(index)
                
@@ -717,9 +715,17 @@ if(clicked == false){
           $( "#nextBT" ).click( function( event ) {
          
               index+=1;
-            
+            if(index > 4){
+             
+    document.getElementById('textarea').innerHTML = 'deslected image to restart or press prev to go back';
+                ct.clearRect(0,0,c.width,c.height)
+      
+        ct.drawImage(treePic, 0,0);
+                index = 5;
+                
+            }else{
                tutorial(paragraphs,posx,posy,index);
-          //    window.alert(index)
+            }
           });
         
 
@@ -727,8 +733,7 @@ if(clicked == false){
 // tutorial(paragraphs,posx,posy);
         
      //   clicked = false;
-   var c = document.getElementById('defaultCanvas0')
-        ct = c.getContext('2d')
+   
         
         if(clicked == true){
          
@@ -751,18 +756,9 @@ if(clicked == false){
         clicked = true}
         
     });
-     $( "#nextBT" ).click(function() {
-     
-    if( document.getElementById('nextBT').innerHTML == 'restart'){
-    window.alert('Click on kernel to deselect and select again')
     
-}
-});
     
-    $( "#prevBT" ).click(function() {
-     window.location.href = "page2.html"; 
-    
-});
+   
 $( "#nextPage" ).click(function() {
      window.location.href = "page4.html"; 
     

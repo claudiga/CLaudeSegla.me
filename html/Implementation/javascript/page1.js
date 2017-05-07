@@ -104,7 +104,7 @@ var drawsquare = function(canvas){
   //  window.alert(matrix)
     
      canvas.addEventListener('mousemove', function(e) {
-         document.getElementById('textarea').innerHTML = "In the grid we have our pixels encoded with 3 channels RGB"
+         document.getElementById('textarea').innerHTML = "In the square we have our pixels encoded with 3 channels Red Green and Blue"
          document.getElementById("hozline").style.display = 'initial';
          document.getElementById("hozline2").style.display = 'initial';
     

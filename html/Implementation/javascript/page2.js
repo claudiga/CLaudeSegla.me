@@ -5,7 +5,7 @@ bart.src = 'graphics/spatv2.jpg'
 
 
 $(window).ready(function() {
-	$(".loader").fadeOut("slow");
+	
 })
 var getxp = function(context){
 var imd = context.getImageData(0,80,700,1);
@@ -44,29 +44,9 @@ var length = imd.data.length;
 
 
     
-var increase = function( data,increase){
-   
- var length = data.data.length;
-
-for(var i = 0; i < length; i+=4){
-   
-     var red = data.data[i];
-    var green = data.data[i+1];
-    var blue = data.data[i+2];
-   // if(red < 100 && green < 100 && blue < 100){
-   
-    
-    data.data[i]= red- increase;
-    data.data[i+1]=green- increase;
-  data.data[i+2] =blue-increase;
-//}
-}
-   
-    return data;
-}
 
 
-window.onload = function(){
+
     
     
     var drawbars = function(increase){
@@ -101,7 +81,7 @@ var context = canvas.getContext('2d');
 
     
     
-    
+    window.onload = function(){
     
             
     var im = document.getElementById('spatial');
@@ -151,22 +131,7 @@ var xaxis = getxp(context);
 });
 
 
-$( "#restartP" ).on( "click", function( event, ui ) {
-    
-    
-    $( "#slider" ).slider( "value", 0 );
-    context.drawImage(im,0,0);
 
-    chart.load({
-  columns: [
-    xaxis
-
-  ]
-});    
-    
-    
-
-} );
 
     $( "#prevBT" ).click(function() {
      window.location.href = "page1.html"; 
@@ -185,5 +150,5 @@ $( "#restartP" ).on( "click", function( event, ui ) {
   ]
 });
 
-    
+    document.getElementById('loader').innerHTML= '';
 }
