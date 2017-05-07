@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+    <script src="javascript/p5.js" type="text/javascript"></script>
+      <script src="javascript/p5.dom.js" type="text/javascript"></script>
+       <script src="javascript/jquery.js" type="text/javascript"></script>
+
+<link rel="stylesheet" type="text/css" href="css/jquery-ui.structure.css">
+<script src="javascript/jquery-ui.js" type="text/javascript"></script>
+
+<link rel="stylesheet" type="text/css" href="css/jquery-ui.css">
+    
+    
+    
+    <canvas id="banner"> </canvas>
+    
+    <ul id="icons">
+
+        <li> <img src="graphics/RestarTicon.png"></li>
+            <li> <img src="graphics/Musicicon.png"></li>
+        </ul>
+    
+
+    </head>
+
+    <body>
+        
+    <div id="bodyy">    
+        
+<div class="Mainc">
+<link href="externel/c3.css" rel="stylesheet" type="text/css">
+
+<!-- Load d3.js and c3.js -->
+<script src="https://d3js.org/d3.v3.min.js"></script>
+<script src="externel/c3.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css/page2style.css">
+<canvas class="Mainc"></canvas>
+    
+         <canvas id="acborder"> </canvas>
+
+
+    
+    
+       
+<div id="accordion" class="ui-accordion ui-widget ui-helper-reset" role="tablist">
+	<h3 class="ui-accordion-header ui-corner-top ui-state-default ui-accordion-icons ui-accordion-header-active ui-state-active" role="tab" id="ui-id-1" aria-controls="ui-id-2" aria-selected="true" aria-expanded="true" tabindex="1"><span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-s"></span>First</h3>
+	<div class="ui-accordion-content ui-corner-bottom ui-helper-reset ui-widget-content ui-accordion-content-active" id="ui-id-2" aria-labelledby="ui-id-1" role="tabpanel" aria-hidden="false" style="display: block; height: 22.8px;"><div id="currPage">
+        <h3>  what is a pixel  </h3>
+        </div>
+        <hr>
+       
+    <div >
+        <h3>  Spatial Frequency  </h3>
+        </div>
+    </div>
+   
+    
+    
+	<h3 class="ui-accordion-header ui-corner-top ui-state-default ui-accordion-icons ui-accordion-header-collapsed ui-corner-all" role="tab" id="ui-id-3" aria-controls="ui-id-4" aria-selected="false" aria-expanded="false" tabindex="-1"><span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-e"></span>Second</h3>
+	<div class="ui-accordion-content ui-corner-bottom ui-helper-reset ui-widget-content" id="ui-id-4" aria-labelledby="ui-id-3" role="tabpanel" aria-hidden="true" style="display: none; height: 22.8px;">
+        
+    <div >
+        <h3>  what is a pixel  </h3>
+        </div>
+        <hr>
+       
+    <div >
+        <h3>  what is a pixel  </h3>
+        </div>
+    
+    </div>
+	<h3 class="ui-accordion-header ui-corner-top ui-accordion-header-collapsed ui-corner-all ui-state-default ui-accordion-icons" role="tab" id="ui-id-5" aria-controls="ui-id-6" aria-selected="false" aria-expanded="false" tabindex="-1"><span class="ui-accordion-header-icon ui-icon ui-icon-triangle-1-e"></span>Third</h3>
+	<div class="ui-accordion-content ui-corner-bottom ui-helper-reset ui-widget-content" id="ui-id-6" aria-labelledby="ui-id-5" role="tabpanel" aria-hidden="true" style="display: none; height: 22.8px;">
+        
+ <div >
+        <h3>  what is a pixel  </h3>
+        </div>
+        <hr>
+       
+    <div >
+        <h3>  what is a pixel  </h3>
+        </div>
+    
+    </div>
+</div> 
+    
+    <div id="spatialText">
+        
+        <p>   Kernel Convolution is possible due to spatial frequency something that is present in nature itself. Spatial frequency refers to the frequency of an arbitiary object over space. an image is said to have low spatial frequency if the value across the space dont change drastiscally. High spatial frequency is when the wavelenght changes drastically making it possible to able identify features in the image.    
+        
+        </p>
+    
+        <audio controls>
+  <source src="Spatial.mp3" type="audio/mpeg">
+</audio>
+        
+    </div>
+
+
+  <div id="tabs">
+  	<ul id="unlist" data-tselected="hey">
+  		
+  		<li><a href="#tabs-1">Spatial Frequency</a></li>
+  		
+         
+          
+  	</ul>
+  	<div id="tabs-1">
+<canvas id="spat" width="700" height="200" ></canvas>
+ <img style="display: none;" id="spatial" src="graphics/spatv2.jpg">
+        
+<div id="chart"></div>
+
+              <div id="slider"></div>
+ 
+  
+       <div id="arrow-l" class="arrow-left"></div>
+        
+<div id="arrow-r" class="arrow-right"></div>
+<ul id="navBTs">   
+            <li> <button id="prevBT" class="ui-button ui-corner-all ui-widget">back</button> </li>
+            <li> <button id="nextBT" class="ui-button ui-corner-all ui-widget">next</button> </li>
+        </ul>
+
+      </div>
+    
+   
+</div>
+        
+  
+        
+<script src="javascript/page2.js"></script>
+   
+
+        
+        
+<script>
+  $("#tabs").tabs();  
+$( "#slider" ).slider();
+    
+
+
+    
+    
+    
+$( "#button" ).button();
+    
+$( "#accordion" ).accordion({
+  classes: {
+      
+  "ui-accordion-header": "ui-corner-top",
+  "ui-accordion-header-collapsed": "ui-corner-all",
+  "ui-accordion-content": "ui-corner-bottom",
+      "collapsible": "true"
+  }
+});
+        $( "#accordion" ).accordion( "option", "active", 1 );
+
+$("#tabs a").click(function() {
+
+
+  var selected = $(this).html();
+
+  var list = document.getElementById('unlist');
+
+list.dataset.tselected = selected;
+
+
+
+});
+
+
+
+
+
+</script>        
+        </div>
+        </div>
+    </body>
+
+
+
+
+</html>

@@ -1,0 +1,221 @@
+body{
+margin: 0px;
+}
+.Mainc{
+
+ width: 100%;
+ position:absolute;
+z-index: -1;
+height: 100%;
+background-color: #FFEBEE;
+
+
+}
+
+
+ #icons{
+
+     position: absolute;
+    list-style-type: none;
+    padding: 0;
+     margin: 0;
+     z-index: 1;
+     position: absolute;
+    margin-left: 80%;
+    margin-top: 40px;
+
+}
+
+
+#tabs{
+  position:absolute;
+  width: 820px;
+    height: 550px;
+ top: 120px;
+  left: 510px;
+  background-color: #FFCDD2;
+    
+
+}
+#accordion{
+    
+    position: relative;
+    top: 100px;
+    left: 5px;
+    width: 180px;
+    z-index: 3;
+   
+    
+    
+}
+
+#accordion div{
+
+    
+   overflow: hidden;
+    white-space: nowrap;
+
+  padding: 0px;
+}
+
+#accordion div div:not(#currPage){
+    
+    background-color: #EF5350
+;
+    padding: 0px;
+    word-wrap: break-word;
+     text-align: center
+   
+}
+#accordion div div h3{
+    
+   color: black;
+ 
+}
+#currPage{
+     background-color: #FFCDD2;
+    padding: 0px;
+    word-wrap: break-word;
+     text-align: center
+    
+}
+
+
+
+hr{
+    padding: 0;
+    margin: 0;
+}
+#acborder{
+    
+    position: absolute;
+    height: 85%;
+    width: 180px;
+    left: 5px;
+    top: 100px;
+    background-color:  red;
+    z-index: 1;
+}
+
+#banner{
+    width: 99%;
+    height: 100px;
+    position: absolute;
+    top: 1px;
+    background-color: #FFCDD2;
+    z-index: 1;
+    
+}
+
+li{
+float: left; 
+margin: 10px;
+ padding: 0px;
+    margin: 2px;
+     
+}
+
+#navBTs{
+    
+    position: relative;
+    bottom: 10px;
+    left: 80%;
+    display: inline-block;
+    list-style: none;
+    
+}
+
+
+
+.arrow-left {
+  width: 0; 
+  height: 0; 
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent; 
+  
+  border-right:10px solid #B71C1C; 
+}
+#arrow-l{
+    position: absolute;
+    top: 91%;
+    left: 83.8%;
+    width: 0px;
+    height: 15px;
+    display: show;
+}
+
+
+
+
+
+
+#Convolution{
+    position: absolute;
+    left: 200px;
+    top: 120px;
+    
+}
+#Coutput{
+    position: absolute;
+    left: 200px;
+    top: 400px;
+    
+}
+
+#textarea{
+ position:inherit;
+    top: 45%;
+    margin-right: 500px;
+
+}
+
+
+#crop{
+    
+    position: absolute;
+    top: 55%;
+    left: 80%;
+    
+}
+.ui-selectmenu-open{
+    vertical-align: top;
+    align-content: center;
+    width: 1px;
+    display: block;
+}
+
+
+#matrix{
+   
+  list-style-type: none;
+  columns: 3;
+  width: 800px;
+    padding-left: 0px;
+}
+
+#picloader{
+    position: relative;
+    bottom: 30px;
+    right: 120px;
+    background: #B71C1C;
+    
+}
+
+
+.ui-spinner{
+    color: red;
+}
+.ui-spinner-up{
+    background-color: white;
+}
+.ui-spinner-down{
+    background-color: black;
+}
+
+input[type=number]{
+    width: 40px;
+} 
+
+#norm{
+    display: none;
+}

@@ -1,0 +1,210 @@
+body{
+margin: 0px;
+padding: 0px;
+}
+.Mainc{
+width: 100%;
+ position:absolute;
+z-index: -1;
+height: 100%;
+background-color: #FFEBEE;
+margin: 0px;
+padding: 0px;
+}
+
+ #icons{
+
+     position: fixed;
+    list-style-type: none;
+    padding: 0;
+     margin: 0;
+     z-index: 1;
+   
+    margin-left: 80%;
+    margin-top: 40px;
+
+}
+
+#tabs{
+  position:absolute;
+  width: 800px;
+    height: 550px;
+ top: 120px;
+  left: 510px;
+  background-color: #FFCDD2;
+    
+
+}
+#accordion{
+    
+    position: relative;
+    top: 100px;
+    left: 5px;
+    width: 180px;
+    z-index: 3;
+   
+    
+    
+}
+
+#accordion div{
+
+    
+   overflow: hidden;
+    white-space: nowrap;
+
+  padding: 0px;
+}
+
+#accordion div div:not(#currPage){
+    
+    background-color: #EF5350
+;
+    padding: 0px;
+    word-wrap: break-word;
+     text-align: center
+   
+}
+#accordion div div h3{
+    
+   color: black;
+ 
+}
+#currPage{
+     background-color: #FFCDD2;
+    padding: 0px;
+    word-wrap: break-word;
+     text-align: center
+    
+}
+
+
+
+hr{
+    padding: 0;
+    margin: 0;
+}
+#acborder{
+    
+    position: absolute;
+    height: 85%;
+    width: 180px;
+    left: 5px;
+    top: 100px;
+    background-color:  red;
+    z-index: 1;
+}
+
+#banner{
+    width: 99%;
+    height: 100px;
+    position: fixed;
+    top: 1px;
+    background-color: #FFCDD2;
+    z-index: 1;
+    
+}
+
+
+li{
+float: left; 
+margin: 10px;
+ padding: 0px;
+    margin: 2px;
+     
+}
+
+#navBTs{
+    
+    position: absolute;
+    top: 80%;
+    left: 70%;
+    display: inline-block;
+    list-style: none;
+    
+}
+.arrow-right {
+  width: 0; 
+  height: 0; 
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent; 
+  
+     border-right:10px solid #B71C1C; 
+
+}
+
+#nextPage{
+    position: absolute;
+    
+}
+.arrow-left {
+  width: 0; 
+  height: 0; 
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent; 
+  
+  border-right:10px solid #B71C1C; 
+}
+#arrow-l{
+   position: absolute;
+    top: 83.6%;
+    left: 74%;
+    width: 0px;
+    height: 15px;
+    display: show;
+}
+
+
+
+#arrow-r{
+z-index: 3;
+    position: absolute;
+  top: 83.6%;
+    left: 94%;
+    width: 0px;
+    height: 15px;
+    transform: scaleX(-1);
+    display: show;
+}
+
+#prevBT{
+z-index:6;
+    
+}
+
+
+#Convolution{
+    position: absolute;
+    left: 200px;
+    top: 120px;
+    height: 280px;
+    
+}
+#Coutput{
+    position: absolute;
+    left: 200px;
+    top: 420px;
+    height: 280px;
+    
+}
+
+#textarea{
+ position:absolute;
+    top: 15%;
+    margin-right: 500px;
+    
+}
+#cropped{
+    position: relative;
+    left: 200px;
+    top: 150px;
+    display: none;
+    height: 280px;
+}
+#crop{
+    
+    position: absolute;
+    top: 55%;
+    left: 80%;
+    
+}
