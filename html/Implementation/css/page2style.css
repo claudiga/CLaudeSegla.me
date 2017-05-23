@@ -173,7 +173,7 @@ margin: 10px;
 z-index: 3;
     position: absolute;
   top: 88.5%;
-    left: 94.3%;
+    left: 93.8%;
     width: 0px;
     height: 15px;
     transform: scaleX(-1);
@@ -209,6 +209,21 @@ path {
 svg{
     
     height: 200px;
+}
+
+#textarea{
+    font-size: 15px;
+    width: 500px;
+    
+}
+
+#ylabel{
+    left: 20px;
+    top: 280px;
+    position: absolute;
+    font-size: 10px;
+   width:1px;
+    word-wrap: break-word;
 }
 
 .axis path,

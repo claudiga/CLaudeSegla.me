@@ -11,8 +11,10 @@ var dest = 'Coutput'
     var reader = new FileReader();
     reader.onload = function(){
       var dataURL = reader.result;
- 
-      imageurl = dataURL;
+        
+        document.getElementById('Convolution').getContext('2d').clearRect(0,0,400,400);
+imageurl = dataURL;
+      
 
            
     tpl = $( "#one" ).spinner( "value" );
@@ -26,7 +28,7 @@ var dest = 'Coutput'
      btr = $( "#nine" ).spinner( "value" );
 
 
-     
+ 
       matrix = {"tpl":tpl,"tpm":tpm, "tpr":tpr,"mdl":mdl,"mdm":mid,"mdr":mdr,"btl":btl,"btm":btm,btr:btr} 
       normal =  document.getElementById("norm").value; 
         
@@ -123,7 +125,7 @@ $( "#kernels" ).on( "selectmenuchange", function( event, ui ) {
                 $( "#three" ).spinner( "value",matrix.btl );
                 $( "#six" ).spinner( "value",matrix.btm );
                 $( "#nine" ).spinner( "value",matrix.btr );
-                document.getElementById('dynamicText').innerHTML = 'look at the kernel carefuly, by taking away the left pixel weighing from the right pixel we can get the vertical edges we can use the same technique to find the horizontal edges'
+                document.getElementById('dynamicText').innerHTML = 'look at the kernel carefuly, by taking away the left pixel from the right pixel we get the vertical edges we can use the same technique to find the horizontal edges'
             break;
             
         case 'Horizental edges':
@@ -140,7 +142,7 @@ $( "#kernels" ).on( "selectmenuchange", function( event, ui ) {
                 $( "#six" ).spinner( "value",matrix.btm );
                 $( "#nine" ).spinner( "value",matrix.btr );
             
-             document.getElementById('dynamicText').innerHTML = 'Using the approach we discussed in the vertical kernel section. to get the horizontal edges we can take away the bottom pixels from the top or vice versa.'
+             document.getElementById('dynamicText').innerHTML = 'Using the approach we discussed in the vertical kernel option. to get the horizontal edges we can take away the bottom pixels from the top or vice versa.'
             break;
             case 'Horizental & Vertical':
             matrix = {"tpl":0,"tpm":1,"tpr":0,"mdl":1,"mdm":0,"mdr":-1,"btl":0,"btm":-1,btr:0} 
@@ -161,7 +163,7 @@ $( "#kernels" ).on( "selectmenuchange", function( event, ui ) {
             
             break;
             case 'Blur':
-            matrix = {"tpl":0,"tpm":1,"tpr":0,"mdl":0,"mdm":0,"mdr":0,"btl":0,"btm":-1,btr:0}
+            matrix = {"tpl":0.05,"tpm":0.11,"tpr":0.05,"mdl":0.11,"mdm":0.22,"mdr":0.11,"btl":0.05,"btm":0.11,btr:0.05}
             normal =  document.getElementById("norm").value;
        convolut(matrix,imageurl,src,dest,normal);
             
@@ -174,6 +176,8 @@ $( "#kernels" ).on( "selectmenuchange", function( event, ui ) {
                 $( "#three" ).spinner( "value",matrix.btl );
                 $( "#six" ).spinner( "value",matrix.btm );
                 $( "#nine" ).spinner( "value",matrix.btr );
+            
+             document.getElementById('dynamicText').innerHTML = 'This is a simple blur kernel.'
             
             break;
                      case 'Sharpen':
@@ -189,6 +193,9 @@ $( "#kernels" ).on( "selectmenuchange", function( event, ui ) {
                 $( "#three" ).spinner( "value",matrix.btl );
                 $( "#six" ).spinner( "value",matrix.btm );
                 $( "#nine" ).spinner( "value",matrix.btr );
+            
+            document.getElementById('dynamicText').innerHTML = 'This is a simple sharpening kernel.'
+            
             break;
             
                 case 'Sobel':

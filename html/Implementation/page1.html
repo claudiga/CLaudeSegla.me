@@ -17,8 +17,10 @@
     
     <ul id="icons">
 
-        <li> <img src="graphics/RestarTicon.png"></li>
-            <li> <img src="graphics/Musicicon.png"></li>
+        <li> <a href="page1.html"> <img alt="Restart tutorial" src="graphics/RestarTicon.png">
+             </a>
+            </li>
+        
         </ul>
     
     
@@ -89,7 +91,7 @@
   <div id="tabs">
   	<ul id="unlist" data-tselected="hey">
   		<li><a href="#tabs-1">View group</a></li>
-  		<li><a href="#tabs-2">view pixel</a></li>
+  		<li><a href="#tabs-2">Edit pixel</a></li>
   		
          
           
@@ -97,7 +99,9 @@
   	<div id="tabs-1">
 
 <p id="textarea"> To see the raw pixels hover over the image. </p>
-        
+<p id="textarea2"> </p>
+<p id="textarea3">  </p>
+       
           <canvas id="hozline" width="210" height="202"></canvas>
   <canvas id="hozline2" width="300" height="300"></canvas>
          <canvas id="rawpixels" width="335" height="401" style="border:1px solid #000000;"></canvas>
@@ -106,13 +110,15 @@
 
 </div>
       	<div id="tabs-2">   <canvas id="rgb"> </canvas>
+                        <p id="textarea4"> move mouse over pixel to see the value and left click to select a pixel. Once selected, you can edit by changing value in the box and set the pixel  </p>
+
               <ul id="inputRGB">
-    <li> <input type="text" name="Red" value=""></li>
-    <li> <input type="text" name="Green" value=""></li>
-    <li> <input type="text" name="Blue" value=""></li>
+    <li> red <input type="text" name="Red" value=""></li>
+    <li> green<input type="text" name="Green" value=""></li>
+    <li> blue<input type="text" name="Blue" value=""></li>
 
   </ul>
-            
+            <p id="textarea5">  </p>
             <button id="editP" class="ui-button ui-corner-all ui-widget">set pixel</button>
 </div>
   

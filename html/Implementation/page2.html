@@ -15,11 +15,12 @@
     
     
     <canvas id="banner"> </canvas>
-    
-    <ul id="icons">
+   <ul id="icons">
 
-        <li> <img src="graphics/RestarTicon.png"></li>
-            <li> <img src="graphics/Musicicon.png"></li>
+        <li> <a href="page1.html"> <img alt="Restart tutorial" src="graphics/RestarTicon.png">
+             </a>
+            </li>
+        
         </ul>
     
 
@@ -86,7 +87,7 @@
     
     <div id="spatialText">
         
-        <p>   Kernel Convolution is possible due to spatial frequency something that is present in nature itself. Spatial frequency refers to the frequency of an arbitiary object over space. an image is said to have low spatial frequency if the value across the space dont change drastiscally. High spatial frequency is when the wavelenght changes drastically making it possible to able identify features in the image.    
+        <p>   Kernel Convolution is possible due to spatial frequency something that is present in nature itself. Spatial frequency refers to the frequency of an arbitiary object over space. an image is said to have low spatial frequency if the frequency across the space dont change drastiscally. High spatial frequency is when the wavelenght changes drastically making it possible to able identify features such as edges in the image.    
         
         </p>
     
@@ -107,7 +108,7 @@
   	</ul>
      
        <h1 id="loader">loading.... </h1>
-     
+     <h1 id="ylabel"></h1>
   	<div id="tabs-1">
 <canvas id="spat" width="700" height="200" ></canvas>
  <img style="display: none;" id="spatial" src="graphics/spatv2.jpg">
@@ -115,7 +116,7 @@
 <div id="chart"></div>
 
               <div id="slider"></div>
- 
+ <h1 id="textarea">At the beginneing we have low spatial frequency.    Move the slider up to increase the cycles hence increasing spatial frequency </h1>
   
        <div id="arrow-l" class="arrow-left"></div>
         
@@ -157,7 +158,7 @@ $( "#accordion" ).accordion({
       "collapsible": "true"
   }
 });
-        $( "#accordion" ).accordion( "option", "active", 1 );
+        $( "#accordion" ).accordion( "option", "active", 0 );
 
 $("#tabs a").click(function() {
 

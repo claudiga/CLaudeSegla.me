@@ -31,7 +31,7 @@ var length = imd.data.length;
        
       }
   
-   newimArray.unshift('x');
+   newimArray.unshift('Space');
     
     
     return newimArray;
@@ -108,7 +108,7 @@ var xaxis = getxp(context);
     
 $( "#slider" ).slider({
       min: 1,
-      max: 50,
+      max: 30,
       step: 1,
       change: function( event, ui ) {
         var valuee = $( "#slider" ).slider( "value" );
@@ -149,6 +149,6 @@ var xaxis = getxp(context);
 
   ]
 });
-
+        document.getElementById('ylabel').innerHTML= 'Frequency';
     document.getElementById('loader').innerHTML= '';
 }

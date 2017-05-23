@@ -11,6 +11,41 @@ bart.src = 'graphics/bartsml.jpg'
 bart.height = 300;
 bart.width = 300;
 
+var matrixR = new Image();
+
+matrixR.src = 'graphics/blankKernel.png';
+ var redMatrix = null;
+matrixR.onload = function(){
+    
+     redMatrix = document.getElementById('bkernelrC').getContext('2d');
+  
+    redMatrix.drawImage(matrixR,0,0,80,80)
+      
+    
+}
+var matrixG = new Image();
+
+matrixG.src = 'graphics/blankKernelg.png';
+ var greenMatrix = null;
+matrixG.onload = function(){
+    
+      greenMatrix= document.getElementById('bkernelrCg').getContext('2d');
+    greenMatrix.drawImage(matrixG,0,0,80,80)
+      
+    
+}
+
+var matrixB = new Image();
+
+matrixB.src = 'graphics/blankKernelb.png';
+var blueMatrix = null;
+matrixB.onload = function(){
+    
+       blueMatrix = document.getElementById('bkernelrCb').getContext('2d');
+    blueMatrix.drawImage(matrixB,0,0,80,80)
+    
+    
+}
 
 var currpage = 0;
 
@@ -283,39 +318,64 @@ treeCtx.restore()
                canvasCh = document.getElementById('Convolution')
          chCtx = canvasCh.getContext('2d')
          chData =chCtx.getImageData(x,y,36,36).data;
-          console.log(chData.length)
+          
            //top
           
           width = 144
           
+        
+        
+       
+       document.getElementById('bkernelrC').style.display = 'initial';
+    document.getElementById('bkernelrCg').style.display = 'initial';
+        document.getElementById('bkernelrCb').style.display = 'initial';
+      
+       
+        
         topLeftR = chData[width+8]
         topLeftG = chData[width+9]
         topLeftB = chData[width+10]
         
-        treeCtx.fillStyle = '#231410';
+        treeCtx.fillStyle = '#778899';
        
-        treeCtx.fillText(topLeftR + '*' + mtrx.tpl,32,305);
-        treeCtx.fillText(topLeftG + '*' +mtrx.tpl,365,219);
-        treeCtx.fillText(topLeftB + '*' +mtrx.tpl,700,320);
+       
+       
+        redMatrix.fillText(topLeftR,5,15,40)
+         greenMatrix.fillText(topLeftG,5,15,40)
+            blueMatrix.fillText(topLeftB,5,15,40)
+        
+        
+         treeCtx.fillText(topLeftR + ' * ' + mtrx.tpl,38,306);
+        treeCtx.fillText(topLeftG + ' * ' +mtrx.tpl,365,212);
+        treeCtx.fillText(topLeftB + ' * ' +mtrx.tpl,700,320);
         
          
         
         topMidR = chData[width +52];
     topMidG = chData[width + 53];
     topMidB = chData[width + 54];
+        
+        redMatrix.fillText(topMidR,30,15,40)
+         greenMatrix.fillText(topMidG,30,15,40)
+          blueMatrix.fillText(topMidB,30,15,40)
           
-          treeCtx.fillText(topMidR + '*' + mtrx.tpm,70,357);
-          treeCtx.fillText(topMidG + '*' +mtrx.tpm,403,265);
-          treeCtx.fillText(topMidB + '*' +mtrx.tpm,740,369);
+          treeCtx.fillText(topMidR + ' * ' + mtrx.tpm,78,357);
+          treeCtx.fillText(topMidG + ' * ' +mtrx.tpm,409,265);
+          treeCtx.fillText(topMidB + ' * ' +mtrx.tpm,743,369);
         
      topRightR = chData[width+108];
          topRightG= chData[width+109];
      topRightB = chData[width+110];
+        
+    redMatrix.fillText(topRightR,58,15,40)
+     greenMatrix.fillText(topRightG,58,15,40)
+      blueMatrix.fillText(topRightB,58,15,40)
+        
           treeCtx.save();
           treeCtx.rotate(-Math.PI / 6);
-          treeCtx.fillText(topRightR + '*' +mtrx.tpr,-40,345);
-          treeCtx.fillText(topRightG + '*' +mtrx.tpr,290,425);
-          treeCtx.fillText(topRightB + '*' +mtrx.tpr,530,680);
+          treeCtx.fillText(topRightR + ' * ' +mtrx.tpr,-40,345);
+          treeCtx.fillText(topRightG + ' * ' +mtrx.tpr,290,425);
+          treeCtx.fillText(topRightB + ' * ' +mtrx.tpr,530,680);
           treeCtx.restore();
           
           
@@ -326,12 +386,17 @@ treeCtx.restore()
           midLeftR = chData[mid+8]
           midLeftG = chData[mid+9]
           midLeftB = chData[mid+10]
+          
+          redMatrix.fillText(midLeftR,5,40,40)
+     greenMatrix.fillText(midLeftG,5,40,40)
+      blueMatrix.fillText(midLeftB,5,40,40)
+          
         treeCtx.save()
          
          treeCtx.translate(95,67)
-          treeCtx.fillText(midLeftR + '*' +mtrx.mdl,32,305 )
-          treeCtx.fillText(midLeftG + '*' +mtrx.mdl,367,213 )
-          treeCtx.fillText(midLeftB + '*' +mtrx.mdl,700,320 )
+          treeCtx.fillText(midLeftR + ' * ' +mtrx.mdl,32,305 )
+          treeCtx.fillText(midLeftG + ' * ' +mtrx.mdl,367,213 )
+          treeCtx.fillText(midLeftB + ' * ' +mtrx.mdl,700,310 )
           
           treeCtx.restore()
           
@@ -339,11 +404,15 @@ treeCtx.restore()
           middleG = chData[mid+53]
           middleB = chData[mid+54]
           
+          redMatrix.fillText(middleR,30,40,40)
+     greenMatrix.fillText(middleG,30,40,40)
+      blueMatrix.fillText(middleB,30,40,40)
+          
           treeCtx.save()
           treeCtx.translate(100,65)
-            treeCtx.fillText(middleR + '*' +mtrx.mdm,70,357);
-          treeCtx.fillText(middleG + '*' +mtrx.mdm,403,265);
-          treeCtx.fillText(middleB + '*' +mtrx.mdm,740,360);
+            treeCtx.fillText(middleR + ' * ' +mtrx.mdm,70,357);
+          treeCtx.fillText(middleG + ' * ' +mtrx.mdm,403,265);
+          treeCtx.fillText(middleB + ' * ' +mtrx.mdm,740,360);
           
           treeCtx.restore()
           
@@ -351,12 +420,17 @@ treeCtx.restore()
           midRightR = chData[mid+108]
           midRightG = chData[mid+109]
           midRightB = chData[mid+110]
+          
+           redMatrix.fillText(middleR,58,40,40)
+     greenMatrix.fillText(middleG,58,40,40)
+      blueMatrix.fillText(middleB,58,40,40)
+          
           treeCtx.save()
           treeCtx.translate(90,65)
            treeCtx.rotate(-Math.PI / 6);
-          treeCtx.fillText(midRightG + '*' +mtrx.mdr,-40,345);
-          treeCtx.fillText(midRightG + '*' +mtrx.mdr,290,425);
-          treeCtx.fillText(midRightB + '*' +mtrx.mdr,530,680);
+          treeCtx.fillText(midRightG + ' * ' +mtrx.mdr,-40,345);
+          treeCtx.fillText(midRightG + ' * ' +mtrx.mdr,293,428);
+          treeCtx.fillText(midRightB + ' * ' +mtrx.mdr,530,680);
           
           treeCtx.restore()
          
@@ -367,12 +441,15 @@ treeCtx.restore()
           botLeftG = chData[bot+9]
           botLeftB = chData[bot+10]
           
+             redMatrix.fillText(botLeftR,5,68,40)
+     greenMatrix.fillText(botLeftG,5,68,40)
+      blueMatrix.fillText(topLeftB,5,68,40)
             treeCtx.save()
          
          treeCtx.translate(195,15)
-          treeCtx.fillText(botLeftR + '*' +mtrx.btl,32,305 )
-          treeCtx.fillText(botLeftG + '*' +mtrx.btl,365,210 )
-          treeCtx.fillText(botLeftB + '*' +mtrx.btl,700,305 )
+          treeCtx.fillText(botLeftR + ' * ' +mtrx.btl,36,305 )
+          treeCtx.fillText(botLeftG + ' * ' +mtrx.btl,365,205 )
+          treeCtx.fillText(botLeftB + ' * ' +mtrx.btl,700,300 )
           
           treeCtx.restore()
           
@@ -381,12 +458,16 @@ treeCtx.restore()
           botMidG = chData[bot+53]
           botMidB = chData[bot+54]
           
+             redMatrix.fillText(botLeftR,30,68,40)
+     greenMatrix.fillText(botLeftG,30,68,40)
+      blueMatrix.fillText(topLeftB,30,68,40)
+          
             treeCtx.save()
          
          treeCtx.translate(240,55)
-          treeCtx.fillText(botMidR + '*' +mtrx.btm,32,305 )
-          treeCtx.fillText(botMidG + '*' +mtrx.btm,365,219 )
-          treeCtx.fillText(botMidB + '*' +mtrx.btm,700,309 )
+          treeCtx.fillText(botMidR + ' * ' +mtrx.btm,32,315 )
+          treeCtx.fillText(botMidG + ' * ' +mtrx.btm,365,215 )
+          treeCtx.fillText(botMidB + ' * ' +mtrx.btm,700,309 )
           
           treeCtx.restore()
           
@@ -395,12 +476,16 @@ treeCtx.restore()
           botRightG = chData[bot + 109]
           botRightB = chData[bot+110]
           
+        redMatrix.fillText(botRightR,58,68,40)
+     greenMatrix.fillText(botRightG,58,68,40)
+      blueMatrix.fillText(botRightB,58,68,40)
+          
             treeCtx.save()
           treeCtx.translate(190,15)
            treeCtx.rotate(-Math.PI / 6);
-          treeCtx.fillText(botRightR + '*' +mtrx.btr,-40,345);
-          treeCtx.fillText(botRightG + '*' +mtrx.btr,290,425);
-          treeCtx.fillText(botRightB + '*' +mtrx.btr,540,665);
+          treeCtx.fillText(botRightR + ' * ' +mtrx.btr,-40,345);
+          treeCtx.fillText(botRightG + ' * ' +mtrx.btr,302,425);
+          treeCtx.fillText(botRightB + ' * ' +mtrx.btr,540,665);
           
           treeCtx.restore()
           
@@ -609,14 +694,15 @@ treeCtx.stroke();
                memctx.fillStyle = 'rgb('+ newRed + ','+ newGreen + ',' + newBlue + ')'
            memctx.fillRect(x+12,y+12,12,12)
         
-          
+          $( "#outputLog" ).dialog("open");
           $( "#output2" ).dialog({
+              
               
       
               
 position: { my: "left top", at: "left bottom", of: canvas }
 }); 
-    document.getElementById('arrow-r').style.display = 'initial';
+    document.getElementById('arrow-r').style.display = 'none';
           document.getElementById('nextBT').innerHTML = 'restart';
         
         
@@ -628,15 +714,7 @@ position: { my: "left top", at: "left bottom", of: canvas }
         
         
     },
- stage5: function(para,x,y){
-     
-  
-if( document.getElementById('nextBT').innerHTML == 'restart'){
-   document.getElementById('nextBT').innerHTML = 'resset'
-    
-}
 
- }
 }
 
 
@@ -647,14 +725,14 @@ document.getElementById('Coutput').getContext('2d').drawImage(memc,0,0);
 var drawsquare = function(canvas,ouput,tutorial){
     var paragraphs = [];
 
-   paragraphs.push('For images with colour we also have to work out the extra channels RGB. so we have to work out each channel and combine them after. Press next to continue');
-    paragraphs.push('we will work out the channels separetly from top to middle to bottom.');
+   paragraphs.push('For images with colour we also have to work out the the other channels but apart from that its exactly same as how we would do it for one channel (black and white).  . Press next to continue');
+    paragraphs.push('1. we gather all the pixels from the top, middle and bottom (our neighbours) . In our case we have 3*3 matrix so we have 9 pixels including the focus pixel (middle)');
     
-    paragraphs.push('now we can perform multiplication of each pixels so corresponding to to the kernel. so for example the top left pixel will be mutiplied by the value in the top left kernel matrix');
+    paragraphs.push('2. Now we can perform multiplication of each pixel corresponding to the kernel. The way we do matrix multiplication here is different from the traditonal way. For example the top left pixel will be mutiplied by the value in the top left kernel matrix, top middle pixel multiplied by top middle kernel, top right pixel mutiplied by top right kernel and so on');
     
-    paragraphs.push('once we worked out the channel we sum them to get the weighing for that colour channel')
+    paragraphs.push('once we worked out all the neighbouring pixels we sum them to get the weighing for that channel, we do this for every channel')
     
-    paragraphs.push('now we have 3 outputs for each channel we then supply this as the rgb for our output pixel')
+    paragraphs.push('2. We sum the subpixels; top middle and bottom to get our weighing Congratualation we just performed a convolution, we can supply this as RGB value for our output pixel.')
         
     
     
@@ -671,6 +749,22 @@ var drawsquare = function(canvas,ouput,tutorial){
 
      canvas.addEventListener('mousemove', function(e) {
 if(clicked == false){
+    
+    
+    
+    document.getElementById('bkernelrC').style.display = 'none';
+    document.getElementById('bkernelrCg').style.display = 'none';
+        document.getElementById('bkernelrCb').style.display = 'none';
+    
+    redMatrix.clearRect(0,0,80,80)
+    redMatrix.drawImage(matrixR,0,0,80,80);
+    
+    greenMatrix.clearRect(0,0,80,80)
+    greenMatrix.drawImage(matrixG,0,0,80,80);
+    
+    blueMatrix.clearRect(0,0,80,80)
+    blueMatrix.drawImage(matrixB,0,0,80,80);
+    
     var rect = canvas.getBoundingClientRect();
     posx = (e.clientX - rect.left) / 0.8333 ;
     posy = (e.clientY - rect.top) /0.8333 ;         
@@ -697,33 +791,30 @@ if(clicked == false){
         
 
         var index = 0;
+        tutorial(paragraphs,posx,posy,index);
             var c = document.getElementById('defaultCanvas0')
         ct = c.getContext('2d')
         
-           $( "#prevBT" ).click( function( event ) {
-         
-              index-=1;
-            
-              if(index == -1){
-                  window.location.href = "page2.html"; 
-              } tutorial(paragraphs,posx,posy,index);
-               
-            // window.alert(index)
-               
-          });
+    
         
           $( "#nextBT" ).click( function( event ) {
          
               index+=1;
             if(index > 4){
              
-    document.getElementById('textarea').innerHTML = 'deslected image to restart or press prev to go back';
-                ct.clearRect(0,0,c.width,c.height)
+             
+    document.getElementById('textarea').innerHTML = 'click on image and select a different pixel or go to next pgae';
+
+  
+
+              //  window.alert('hey')
+             //   ct.clearRect(0,0,c.width,c.height)
       
-        ct.drawImage(treePic, 0,0);
+     //   ct.drawImage(treePic, 0,0);
                 index = 5;
                 
             }else{
+                console.log(index)
                tutorial(paragraphs,posx,posy,index);
             }
           });
@@ -742,22 +833,23 @@ if(clicked == false){
     index = 0;
        ct.clearRect(0,0,c.width,c.height)
       
-        ct.drawImage(treePic, 0,0);
+       ct.drawImage(treePic, 0,0);
             
       
         
             document.getElementById('textarea').innerHTML ='';
         clicked = false}else{ 
             
-            
-           // ct.drawImage(treePic,0,0);
-          //  window.alert(55)
-            
+            index = 0;
+       
         clicked = true}
         
     });
     
+$( "#prevPage" ).click(function() {
+     window.location.href = "page2.html"; 
     
+});    
    
 $( "#nextPage" ).click(function() {
      window.location.href = "page4.html"; 

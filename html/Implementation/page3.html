@@ -18,10 +18,12 @@
 
     <canvas id="banner"> </canvas>
     
-    <ul id="icons">
+      <ul id="icons">
 
-        <li> <img src="graphics/RestarTicon.png"></li>
-            <li> <img src="graphics/Musicicon.png"></li>
+        <li> <a href="page1.html"> <img alt="Restart tutorial" src="graphics/RestarTicon.png">
+             </a>
+            </li>
+        
         </ul>
 
     <link id="pageStyle" rel="stylesheet" type="text/css" href="css/page3style.css">
@@ -87,11 +89,11 @@
 </div> 
     
 
-
+<h1 id="headerO"> Original Image</h1>
 <canvas id="Convolution" height="300" width="300"></canvas>
     
     <div id="kernelLog" title="Kernel">
-  <p>Hover over the image, The red sqaure is your kernel</p>
+  <p>Hover over the image, The red square is your kernel, click a pixel to begin</p>
         
             <audio controls>
   <source src="Kernel.mp3" type="audio/mpeg">
@@ -114,6 +116,8 @@
     
 <p id="textarea2">  </p>
     
+    
+    
     <canvas id="Coutput" height="300" width="300"></canvas>
   <div id="tabs">
   	<ul id="unlist" data-tselected="hey">
@@ -128,14 +132,22 @@
 <p id="textarea">  </p>
   </div>
 
+      <canvas id="bkernelrC" width="80" height="80"></canvas>
+      <canvas id="bkernelrCg" width="80" height="80"></canvas>
+      <canvas id="bkernelrCb" width="80" height="80"></canvas>
+      
+     
               <div id="arrow-l" class="arrow-left"></div>
         
 <div id="arrow-r" class="arrow-right"></div>
 <ul id="navBTs">   
-            <li> <button id="prevBT" class="ui-button ui-corner-all ui-widget">Prev</button> </li>
+            
             <li> <button id="nextBT" class="ui-button ui-corner-all ui-widget">Next</button> </li>
         </ul>
+      <div id="arrow-r2" class="arrow-right"></div>
+    <button id="prevPage" class="ui-button ui-corner-all ui-widget">Previous Page</button>  
 <button id="nextPage" class="ui-button ui-corner-all ui-widget">Next Page</button>
+      
      <div id="matrices">  
          <h3>our kernel</h3>
       <img src="graphics/kernelpage3.png">

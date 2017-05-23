@@ -81,15 +81,7 @@ var  imdat = ctx.getImageData(x,y,w,h);
     var pixel = 0;
 
 
-/**for(var i=0; i<img.width *2; i++) {
-    matrix[i] = [];
-    for(var j=0; j<img.height*2; j++) {
-        matrix[i][j] = imdat[pixel];
-        pixel++;
-    }
-}
 
- */
  return imdat;
 }
 
@@ -104,7 +96,11 @@ var drawsquare = function(canvas){
   //  window.alert(matrix)
     
      canvas.addEventListener('mousemove', function(e) {
-         document.getElementById('textarea').innerHTML = "In the square we have our pixels encoded with 3 channels Red Green and Blue"
+         document.getElementById('textarea').innerHTML = "In the square we have our pixels encoded with 3 channels Red Green and Blue as we can see images are just made of numbers from 0-255, one set of RGB wil give us a single pixel. "
+         
+         document.getElementById('textarea2').innerHTML = "For example 255,255,255. would form together to make a single white pixel"
+         
+         document.getElementById('textarea3').innerHTML = "As you can see in the square above, the pixels are orderered sequentially, so we can edit a pixel by itslef. Click on the edit pixel tab for demonstatration"
          document.getElementById("hozline").style.display = 'initial';
          document.getElementById("hozline2").style.display = 'initial';
     
@@ -117,7 +113,7 @@ var drawsquare = function(canvas){
 
 
 
-  //console.log('posx' + posx + ' posy' + posy);
+  
 
 
 
@@ -168,15 +164,15 @@ if(active == 0 && xax > -5 && xax < 330 && yax > -5 && yax < 230){ctx.drawImage(
 
 
                    var xrgb,tx,yrgb,ty;
-                 for( xrgb =0, tx = 0; tx <= 401; tx+=68, xrgb+=16){
+                 for( xrgb =8, tx = 3; tx <= 401; tx+=68, xrgb+=16){
 
 
-                   for(yrgb = 0,ty= 0; ty <= 401; ty+= 36, yrgb+=11){
+                   for(yrgb = 8,ty= 20; ty <= 401; ty+= 36, yrgb+=16){
 
 
        
-       var sq = ImageData('sq',xrgb+4,yrgb+4,1,1);
-       console.log(xrgb)
+       var sq = ImageData('sq',xrgb,yrgb,1,1);
+       
        ctxp.fillText(sq[0] + ','+ sq[1] +','+ sq[2] ,tx,ty)
 
                    }
@@ -191,9 +187,7 @@ if(active == 0 && xax > -5 && xax < 330 && yax > -5 && yax < 230){ctx.drawImage(
 
 
 
-}else if (tab.includes('view')) {
-
-  
+}else if (tab.includes('Edit')) {
 
 
 
@@ -212,11 +206,11 @@ ctx.drawImage(img,0,0);
     
     var elems = inputrgb.getElementsByTagName('input');
     
-   elems[0].setAttribute('value',red.toString());
+   elems[0].value = red.toString();
    
-    elems[1].setAttribute('value',green.toString());
+    elems[1].value = green.toString();
     
-    elems[2].setAttribute('value',blue.toString());
+    elems[2].value = blue.toString();
    
 
 }
@@ -255,7 +249,10 @@ ctx.drawImage(img,0,0);
 
            $( "#editP" ).click(function() {
                if(mouseclicked){
-
+                   
+                   
+    document.getElementById('textarea5').innerHTML = "Congratulations! you just edited an image manually. Click next to continue..."
+                   
                    var inputrgb = document.getElementById('inputRGB');
     
     var elems = inputrgb.getElementsByTagName('input');
@@ -271,11 +268,12 @@ ctx.drawImage(img,0,0);
                }
 });
 
+
+    
 }
 
 $( "#nextBT" ).click(function() {
      window.location.href = "page2.html"; 
     
 });
-                             
 
