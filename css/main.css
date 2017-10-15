@@ -7,18 +7,41 @@ background-color: aqua;
 
 }
 
-header{
-    background-color: red;
+#leftarrow{
+position: absolute;
+margin-left: 0px;
+}
+#rightarrow{
+      display: inline-block; 
+    position: absolute;
+
+}
+
+
+#riarrow{
     
-    padding: 40px 0px;
-    width: 100%;
-    color: white;
-    text-align: center;
+    width: 256px;
+    height: 256px;
+    float: right;
+}
+
+#about{
+     display: block; 
+
+    background-color: darkgoldenrod;
+    width: 80%;
+    height: 500px;
+  
+margin: 0px auto;
+
+ 
     
 }
+
 a{
     
     text-decoration: none;
+    
     color: inherit;
 }
 
@@ -29,7 +52,7 @@ nav ul{
     overflow: hidden;
     color: white;
     padding: 0;
-    text-align: center;
+    text-align: right;
     margin: 0;
     -webkit-transition: max-height 0.4s;
     -o-transition: max-height 0.4s;
