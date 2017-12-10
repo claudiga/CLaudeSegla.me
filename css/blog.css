@@ -7,22 +7,13 @@ background-color:#E0F2F1;
 
 }
 
-.postTitle{
+#maindiv{
 
-text-align: center;
-}
+width: 800px;
+height:1000px;
+background-color: red; 
+margin: 0px auto;
 
-.postParagraph{
-
-color:#616161;
-width: 80%;
-padding-left: 100px;
-
-}
-
-.postImage{
-  display: block;
-    margin: 0 auto;
 }
 
 

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" type="text/css" href="../../css/blogpost.css">
+    <script src="../../scripts/jquery.js" type="text/javascript"></script>
+
+
+
+<script src="../../scripts/responsemaker.js"></script>  
+
+
+  <head>
+
+        
+    <nav> 
+
+<ul >
+
+    
+        <a href="index.html" ><li> Home </li></a>
+        <a href="" ><li> Contact </li></a>
+        <a href="" ><li> Blog </li></a>
+        <a href="html/Implementation/page1.html" ><li> Projects </li></a>
+
+
+
+</ul>
+<div class="handle">menu <img src='icon.png' height='50px' width='100px' align='right'></div>
+    </nav>
+    <title> tryme </title>
+       
+
+</head>
+
+<style>
+
+textarea   {
+position: relative;
+ display:inline;
+          float:left;
+
+    border : 2px solid red;
+    height:225px;
+		
+	left: 100px;
+		  }
+#textareas{padding-left: 100px;}
+
+</style>
+<body> 
+
+
+<h1 style="text-align:center">Claudes Article </h1>
+<div id=LineSplitter>
+
+<div >
+
+<h2 class=postTitle> Response maker</h2>
+<p class=postParagraph>
+Making objects to hold response entities is error prone and a mundane activitiy, this tool will generate a java class for you given a well formatted json string. But thesere's some rules you must follow.
+
+</p>
+
+<ul>
+
+<li>
+If you are providing a property that takes an array of objects or other datatypes, it must be of length 1 as the program is not built to handle multiples and it one is adequate to do the job. for example
+
+
+</li>
+</ul>
+
+<div id=textareas>
+<button type="button" onclick="generate()">Generate</button>
+<input id="className" type="text" name="classN">
+
+
+<h2> Input json here </h2>
+<textarea  id="inputText" rows="4" cols="50">
+</textarea>
+<textarea id="outputText" rows="4" cols="50">
+</textarea >
+
+
+
+
+</div>
+
+
+</div>
+
+
+  <script >
+
+        $( ".handle" ).on( "click", function() {
+          
+            $("nav ul").toggleClass("showing");
+        });
+    </script>    
+
+    
+</body>
+
+
+</html>
