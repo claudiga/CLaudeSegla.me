@@ -1,6 +1,3 @@
-  $( "#slider").slider();
-
-
 bart = new Image();
 
 bart.src = '../images/spatv2.jpg'
@@ -135,6 +132,15 @@ var xaxis = getxp(context);
 
 
 
+
+    $( "#prevBT" ).click(function() {
+     window.location.href = "page1.html"; 
+    
+});
+    $( "#nextBT" ).click(function() {
+     window.location.href = "page3.html"; 
+    
+});
      drawbars(1);
     var xaxiss = getxp(context);
  chart.load({

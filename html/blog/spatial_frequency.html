@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html>
-    <link rel="stylesheet" type="text/css" href="../../css/blog.css">
+    <link rel="stylesheet" type="text/css" href="../../css/blogpost.css">
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
            <script src="../../scripts/jquery.js" type="text/javascript"></script>
 
 <link rel="stylesheet" type="text/css" href="../../css/jquery-ui.structure.css">
 <script src="../../scripts/jquery-ui.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="../../css/jquery-ui.css">
+     <link rel="stylesheet" type="text/css" href="../../css/c3.css">
 <script src="https://d3js.org/d3.v3.min.js"></script>
 <script src="../../scripts/c3.min.js"></script>  
 <script src="../../scripts/text_splitter.js"></script>  
@@ -20,10 +22,10 @@
 <ul >
 
     
-        <a href="index.html" ><li> Home </li></a>
-        <a href="" ><li> Contact </li></a>
-        <a href="" ><li> Blog </li></a>
-        <a href="html/Implementation/page1.html" ><li> Projects </li></a>
+        <a href="../../index.html" ><li> Home </li></a>
+        <a href="../../index.html#aboutsection" ><li> Contact </li></a>
+        <a href="../blog/bloghome.html" ><li> Blog </li></a>
+        <a href="../../index.html#projectsection" ><li> Projects </li></a>
 
 
 
@@ -34,11 +36,40 @@
        
 
 </head>
+    
+    <style>
+    
+.axis path,
+.axis line {
+    fill: none;
+    stroke: grey;
+    stroke-width: 1;
+    shape-rendering: crispEdges;
+}
+        #ylabel{
+        
+    padding-top:250px;
+    position: absolute;
+    font-size: 10px;
+   width:1px;
+    word-wrap: break-word;
+}
+        
+        #scontent{
+            padding-bottom: 50px;
+            margin:0 auto;
+            width: 700px;
+        }
+        #spat{
+    padding-left: 42px;
+height: 150px;
+width: 700px;
+}
+
+    </style>
 <body> 
 
 
-<h1 style="text-align:center">The awesome blog </h1>
-<p style="text-align:center"> Welcome to the awesomest blog here i will write about random stuff that come to my head</p>
 <div id=SpatialFrequency>
 
 <div >
@@ -46,41 +77,50 @@
 <h2 class=postTitle> Spatial Frequencies</h2>
 <img class="postImage" src="../images/spatialfrequency.jpg"/>
 <p class=postParagraph>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. In porttitor consectetur
- nibh, id laoreet ipsum posuere at. Vivamus faucibus neque molestie nunc convallis pellentesque.
- Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Phasellus porttitor enim 
- eget sapien pellentesque semper. Curabitur non suscipit ex, in molestie mauris. Proin neque sapien, hendrerit eget pretium ac, 
- congue et ante. Phasellus faucibus sem sit amet nisi aliquam dignissim. 
- Etiam porttitor, mi quis aliquam hendrerit, arcu tellus varius nisl, 
- id elementum lorem ligula nec felis. Interdum et malesuada fames ac ante 
- ipsum primis in faucibus.
+Our percetion of edges and detail in an image comes down to spatial freequency. Spatial frequency refers to the amount of detail a given image or object has per cycle where in a black white image 1 cycle would be a unit of light followed by dark or vice versa. This can be visualised in the sinusoidal graph below. Images that have low spatial frequency tend to have smaller difference in change where as images with high spatial frequency change drastically. In the example below this gives the percetion of high contrast bars.    
 </p>
 </div>
 
-   <canvas id="spat" width="700" height="200" ></canvas>
-              <div id="slider"></div>
-
-    
+<div id="scontent">
     
 
-<script src="../../scripts/blog.js"></script>
+    <h1 id="loader">loading.... </h1>
+    
+     <h1 id="ylabel"></h1>
+        <canvas id="spat" width="700" height="200" ></canvas>
+
+  	<div id="tabs-1">
+
+        
+<div id="chart"></div>
+               <div id="slider"></div>
 
 
+  
+ 
+
+      </div>
+    
+   
 </div>
+        
+      </div>
+
+        
+
+<script src="../../scripts/spatial.js"></script>
+
+
+
+<script>
+    $( "#slider" ).slider();
+
+    </script>
 
 
 
 
 
-
-</div>
-  <script >
-
-        $( ".handle" ).on( "click", function() {
-          
-            $("nav ul").toggleClass("showing");
-        });
-    </script>    
 
     
 </body>

@@ -16,10 +16,10 @@
 <ul >
 
     
-        <a href="index.html" ><li> Home </li></a>
-        <a href="" ><li> Contact </li></a>
-        <a href="" ><li> Blog </li></a>
-        <a href="html/Implementation/page1.html" ><li> Projects </li></a>
+        <a href="../../index.html" ><li> Home </li></a>
+        <a href="../../index.html#aboutsection" ><li> Contact </li></a>
+        <a href="../blog/bloghome.html" ><li> Blog </li></a>
+        <a href="../../index.html#projectsection" ><li> Projects </li></a>
 
 
 
@@ -37,29 +37,33 @@ textarea   {
 position: relative;
  display:inline;
           float:left;
-		    resize: none;
     border : 2px solid red;
-    height:125px;
+    height:500px;
+    width: 400px;
 		
 	left: 100px;
 		  }
 #textareas{padding-left: 100px;}
+#button{
+position: relative;
+
+left: 100px;
+}
 
 </style>
 <body> 
 
 
-<h1 style="text-align:center">Claudes Article </h1>
 <div id=LineSplitter>
 
 <div >
 
 <h2 class=postTitle> Line Splitter</h2>
 <p class=postParagraph>
-Isn't it annoying when you have a string you copied from somewhere and when you paste it into abother place say a html file, it comes as one huge line? 
+Isn't it annoying when you have a string you copied from somewhere and when you paste it into another place say a html file, it comes as one huge line? 
 worry no more because this tool does just the job of erradicating that!
 </p>
-<button type="button" onclick="splitFile()">Split</button>
+<button id="button" type="button" onclick="splitFile()">Split</button>
 
 <div id=textareas>
   Letters per line:
