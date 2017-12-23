@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" type="text/css" href="../../css/blogpost.css">
+    <script src="../../scripts/jquery.js" type="text/javascript"></script>
+    <script src="../../scripts/FileSaver.js" type="text/javascript"></script>
+    
+    <script src="../../scripts/jszip.js" type="text/javascript"></script>
+
+
+<script src="../../scripts/responsemaker.js"></script>  
+
+
+  <head>
+
+        
+    <nav> 
+
+<ul >
+
+    
+        <a href="../../index.html" ><li> Home </li></a>
+        <a href="../../index.html#aboutsection" ><li> Contact </li></a>
+        <a href="../blog/bloghome.html" ><li> Blog </li></a>
+        <a href="../../index.html#projectsection" ><li> Projects </li></a>
+
+
+
+</ul>
+<div class="handle">menu <img src='icon.png' height='50px' width='100px' align='right'></div>
+    </nav>
+    <title> tryme </title>
+       
+
+</head>
+
+<style>
+
+   <style type="text/css">
+      body {
+        margin: 10px;
+        height: 400px;
+        white-space: nowrap;
+      }
+
+      h1 {
+        font-size: 15px;
+      }
+
+      #container {
+ padding-bottom: 50px;
+            margin:0 auto;
+            width: 700px;      }
+
+      textarea{
+        height: 500px;
+      }
+      #error{
+        display: inline;
+        color: red;
+      }
+      
+    </style>
+
+<body> 
+
+
+<div id=response>
+
+<div >
+
+<h2 class=postTitle> Response maker</h2>
+<p class=postParagraph>
+Making objects to hold response entities is error prone and a mundane activitiy, this tool will generate a java class for you given a well formatted json string. In order for this tool to work as expected every property that is an array must have atleast one element as java is strongly typed and can't guess what type the array is supposed to hold.
+
+</p>
+
+    
+<div id="container">
+    
+<div id=textareas>
+      class name:
+      <input id="className" type="text" value="Sample" name="classN"><button id="generate">Generate</button> <p id="error"> Input json here </p>
+      <br/>
+      <button id="download">Download class(es)</button>
+      <h2> Input json here </h2>
+      </div>
+      
+      
+      
+      
+      
+      <textarea  id="inputText" rows="4" cols="50">{
+              "arrayOfObjects":[{
+              "name":"claude",
+              "age": 22,
+              "likesJava": true
+              }],
+              "arrayOfints": [100],
+              "arrayOfStrings": ["hello","world"],
+              "text": "hello world",
+              "bool": true,
+              "jsonObject": {
+              "university":"Manchester Met",
+              "degree": "Computer Science",
+              "grade": 1
+              }
+              }
+      </textarea>
+      
+      <textarea id="outputText" rows="4" cols="50">
+      </textarea >
+      
+      
+      
+      
+      </div>
+      
+      
+      </div>  
+
+
+</div>
+
+
+  <script >
+
+        $( ".handle" ).on( "click", function() {
+          
+            $("nav ul").toggleClass("showing");
+        });
+    </script>    
+
+    
+</body>
+
+
+</html>

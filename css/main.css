@@ -2,34 +2,216 @@ body{
 margin: 0;
     padding: 0;
     font-family: sans-serif;
-background-color: aqua;
+background-image: url(../html/images/backgroundblack.jpg)
     
 
 }
 
-header{
-    background-color: red;
-    
-    padding: 40px 0px;
-    width: 100%;
-    color: white;
-    text-align: center;
+#uparrow{
+position: absolute;
+    background-color: lightblue;
+	width: 100%;
+	height: 20%;
+
+}
+
+#downarrow{
+position: relative;
+	
+	top: 80%;
+	
+
+}
+
+#leftarrow{
+	position: relative;
+	display: block;
+    margin: 0 auto;
+	width: 5%;
+	
+}
+#rightarrow{
+ 	position: relative;
+	display: block;
+    margin: 0 auto;
+	width: 5%;
+
+}
+
+#profilepic{
+
+position: absolute;
+ left: 0; 
+  right: 0; 
+  
+  margin-left: auto; 
+  margin-right: auto; 
+  width: 15vh;
+  
+   border-radius: 25px;
+ border: 2px solid;
+
+}
+
+
+
+#about{
+position: relative;
+     display: block; 
+
+    width: 90%;
+height:90vh;  
+margin: 0px auto;
+background-image: url("../html/images/mainpic.jpg");
+
+ 
     
 }
+
+
+
+#innerabout{
+position: absolute;
+ left: 0; 
+  right: 0; 
+  top: 20%;
+  margin-left: auto; 
+  margin-right: auto; 
+  width: 40vh;
+  height:40vh;
+  
+    background-color: #0097a7;
+	border-radius: 25px;
+ border: 20px solid;
+
+}
+
+#innerabout h1{
+position:relative;
+text-align: center;
+font-size:4vh;
+padding-top:20vh;
+
+}
+
+#innerabout h2{
+position:relative;
+text-align: center;
+padding-top:2vh;
+font-size:3vh;
+}
+
+#projects{
+position: relative;
+display: block; 
+width: 80%;
+height:1000%;
+background-color: #E3F2FD; 
+margin: 0px auto;
+}
+#projects h2{
+padding-top:1em;
+text-align:center;
+    font-style: italic;
+
+}
+.title{
+padding-left:20px;
+text-decoration: underline;
+}
+
+.description{
+color:#424242;
+position: relative;
+font-size: 3vh;
+}
+
+p {
+
+	
+	}
+
+.projectIm{
+padding-left:20px;
+padding-right:20px;
+float: left;
+width: 12%;
+
+}
+
+ div hr{
+position: relative;
+top: 1px;
+
+width: 99%;
+ border-top: 10px solid #01579B;
+}
+
+
+.links{
+position:relative;
+list-style-type: none;
+
+
+padding-left: 140px;
+
+}
+
+
+.links li{
+
+padding: 5px;
+
+float: left;
+}
+
 a{
     
     text-decoration: none;
-    color: inherit;
+
 }
 
+#personal{
+position: relative;
+
+top:20px;
+display: block; 
+width: 80%;
+height:100%;
+background-color: #E3F2FD; 
+margin: 0px auto;
+}
+
+#personal h2{
+padding-top:1em;
+text-align:center;
+    font-style: italic;
+
+}
+#units{
+width:100%
+
+}
+.spaceT{
+padding-bottom: 50px;
+font-size: 3vh;
+color:black;
+
+}
+td{font-size: 3vh;
+   
+color:#424242;
+
+
+}
 nav ul{
     
     
-    background-color: green;
+    background-color: #0097a7;
     overflow: hidden;
     color: white;
     padding: 0;
-    text-align: center;
+    text-align: right;
     margin: 0;
     -webkit-transition: max-height 0.4s;
     -o-transition: max-height 0.4s;
@@ -70,7 +252,7 @@ section{
 }
 
 @media screen and (max-width: 580px) {
-    
+
     nav ul{
         max-height: 0;
         

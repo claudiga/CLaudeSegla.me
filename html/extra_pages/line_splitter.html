@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" type="text/css" href="../../css/blogpost.css">
+    <script src="../../scripts/jquery.js" type="text/javascript"></script>
+
+
+
+<script src="../../scripts/text_splitter.js"></script>  
+
+
+  <head>
+
+        
+    <nav> 
+
+<ul >
+
+    
+        <a href="../../index.html" ><li> Home </li></a>
+        <a href="../../index.html#aboutsection" ><li> Contact </li></a>
+        <a href="../blog/bloghome.html" ><li> Blog </li></a>
+        <a href="../../index.html#projectsection" ><li> Projects </li></a>
+
+
+
+</ul>
+<div class="handle">menu <img src='icon.png' height='50px' width='100px' align='right'></div>
+    </nav>
+    <title> tryme </title>
+       
+
+</head>
+
+<style>
+
+textarea   {
+position: relative;
+ display:inline;
+          float:left;
+    border : 2px solid red;
+    height:500px;
+    width: 400px;
+		
+	left: 100px;
+		  }
+#textareas{padding-left: 100px;}
+#button{
+position: relative;
+
+left: 100px;
+}
+
+</style>
+<body> 
+
+
+<div id=LineSplitter>
+
+<div >
+
+<h2 class=postTitle> Line Splitter</h2>
+<p class=postParagraph>
+Isn't it annoying when you have a string you copied from somewhere and when you paste it into another place say a html file, it comes as one huge line? 
+worry no more because this tool does just the job of erradicating that!
+</p>
+<button id="button" type="button" onclick="splitFile()">Split</button>
+
+<div id=textareas>
+  Letters per line:
+  <input id="paddingsize" type="number" name="padding" value="50">
+
+
+<h2> Input text here </h2>
+<textarea  id="inputText" rows="4" cols="50">
+</textarea>
+
+
+
+<textarea id="outputText" rows="4" cols="50">
+</textarea >
+</div>
+
+
+</div>
+
+
+  <script >
+
+        $( ".handle" ).on( "click", function() {
+          
+            $("nav ul").toggleClass("showing");
+        });
+    </script>    
+
+    
+</body>
+
+
+</html>
