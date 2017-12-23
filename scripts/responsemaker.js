@@ -101,14 +101,10 @@ window.onload = function(){
     
     var depend = JSON.stringify(eval('this.jsonObject.'+this.properties[p][0]));
     
-    if(depend.charAt(0) == '['){
-    depend = depend.substring(1,depend.length-1);
-    if(depend.charAt(0) !="{"){
-        
-       depend = depend.split(',')[0];
-    }
+  
+
+
     var strings= [];
- 
 
     for(var i = 0; i < depend.length-1; i++){
 
@@ -122,7 +118,6 @@ window.onload = function(){
                 continue;
             }
         }
-       
         
         if(strings.length <= 0 && depend.charAt(i) == ',' && depend.charAt(i+1) == "{"){
         
@@ -133,7 +128,17 @@ window.onload = function(){
         } 
         
     }
-    
+
+    if(depend.charAt(0) == '['){        
+
+        depend = depend.substring(1,depend.length-1);
+        if(depend.charAt(0) !="{"){
+          depend = depend.split(',')[0];
+          if(depend.charAt(0) == "\"" && depend.charAt(depend.length-1) != "\""){ 
+            
+          depend+="\"";
+           }
+        }
     var dependJson = JSON.parse(depend);
     var type = typeof dependJson;
     if( type != "object" ){
