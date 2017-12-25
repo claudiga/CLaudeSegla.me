@@ -122,6 +122,9 @@ window.onload = function(){
         if(strings.length <= 0 && depend.charAt(i) == ',' && depend.charAt(i+1) == "{"){
         
             depend = depend.substring(0,i);
+            if(depend.charAt(1) == "{"){
+                depend+="}";
+            }
             
             break;
             
@@ -139,6 +142,7 @@ window.onload = function(){
           depend+="\"";
            }
         }
+        
     var dependJson = JSON.parse(depend);
     var type = typeof dependJson;
     if( type != "object" ){
@@ -219,20 +223,16 @@ this.appendLine(linestoAppend);
     constructor = "public "+this.className+ "(";
     var noArgcons = constructor + "){}";
     for(var i = 0; i < constructorArgs.length; i=i+1){
-
         constructor = constructor + constructorArgs[i][0];
         if(i < constructorArgs.length -1){
         constructor = constructor + ", ";
         }
     }
     constructor = constructor +"){\n\n";
-
     for(var i = 0; i < constructorArgs.length; i=i+1){
      
         constructor = constructor + "this."+constructorArgs[i][1]+ " = "+ constructorArgs[i][1]+";\n\n";
-
     }
-
     constructor = constructor + "}";
     this.appendLine("\n"+ noArgcons);
     this.appendLine("\n"+constructor);
@@ -392,4 +392,3 @@ this.appendLine(linestoAppend);
        
        
          });
-       
